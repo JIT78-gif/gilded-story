@@ -2,43 +2,43 @@ import { motion } from "framer-motion";
 
 const VenueSection = () => {
   return (
-    <section className="py-24 md:py-32 px-6">
+    <section className="py-28 md:py-36 px-6">
       <motion.div
-        className="max-w-4xl mx-auto text-center"
+        className="max-w-3xl mx-auto text-center"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
       >
-        <p className="font-body text-lg tracking-[0.2em] uppercase text-muted-foreground mb-3">
+        <p className="font-body text-fluid-lg tracking-[0.2em] uppercase text-muted-foreground mb-4 leading-relaxed">
           The Celebration Awaits
         </p>
-        <h2 className="font-heading text-3xl md:text-4xl text-foreground mb-4">
+        <h2 className="font-heading text-fluid-3xl text-foreground mb-6 leading-[1.3]">
           Summer Palace
         </h2>
-        <p className="font-body text-lg text-muted-foreground max-w-lg mx-auto mb-4">
+        <p className="font-body text-fluid-lg text-muted-foreground max-w-2xl mx-auto mb-5 leading-[1.8]">
           Nestled amidst manicured gardens and regal architecture, Summer Palace
           sets the perfect stage for our union — where timeless elegance meets
           heartfelt celebration.
         </p>
-        <p className="font-body text-base text-muted-foreground mb-8">
+        <p className="font-body text-fluid-base text-muted-foreground mb-10 leading-relaxed">
           Surat, Gujarat • India
         </p>
 
         {/* Venue illustration placeholder */}
         <motion.div
-          className="w-full max-w-md mx-auto h-48 rounded-xl border border-border bg-card flex items-center justify-center mb-10"
+          className="w-full max-w-md mx-auto rounded-xl border border-border bg-card flex items-center justify-center mb-12 py-10"
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
         >
-          <div className="text-center">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="hsl(38 65% 50% / 0.4)" strokeWidth="1" className="mx-auto mb-2">
+          <div className="text-center p-4">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="hsl(38 65% 50% / 0.4)" strokeWidth="1" className="mx-auto mb-3">
               <path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6" />
             </svg>
-            <p className="font-body text-sm text-muted-foreground">Venue Illustration</p>
-            <p className="font-body text-xs text-muted-foreground opacity-60">/assets/illustrations/venue.png</p>
+            <p className="font-body text-fluid-sm text-muted-foreground">Venue Illustration</p>
+            <p className="font-body text-xs text-muted-foreground opacity-60 mt-1">/assets/illustrations/venue.png</p>
           </div>
         </motion.div>
 

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-6 py-16">
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-6 py-20 md:py-24">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-[0.03]"
         style={{
@@ -36,7 +36,7 @@ const HeroSection = () => {
         transition={{ duration: 1.5 }}
       >
         <motion.p
-          className="font-body text-lg md:text-xl tracking-[0.3em] uppercase text-muted-foreground mb-8"
+          className="font-body text-fluid-lg tracking-[0.3em] uppercase text-muted-foreground mb-10"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.8 }}
@@ -48,41 +48,41 @@ const HeroSection = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.6, duration: 1 }}
-          className="py-4"
+          className="py-6"
         >
-          <h1 className="font-script text-5xl md:text-7xl lg:text-8xl text-gold-gradient leading-[1.4] pb-3 px-4">
+          <h1 className="font-script text-fluid-hero text-gold-gradient leading-[1.5] pb-4 px-4">
             Priya
           </h1>
           <motion.p
-            className="font-body text-2xl md:text-3xl text-muted-foreground my-4"
+            className="font-body text-fluid-2xl text-muted-foreground my-5"
             initial={{ opacity: 0, scaleX: 0 }}
             animate={{ opacity: 1, scaleX: 1 }}
             transition={{ delay: 1, duration: 0.6 }}
           >
             &amp;
           </motion.p>
-          <h1 className="font-script text-5xl md:text-7xl lg:text-8xl text-gold-gradient leading-[1.4] pb-3 px-4">
+          <h1 className="font-script text-fluid-hero text-gold-gradient leading-[1.5] pb-4 px-4">
             Arjun
           </h1>
         </motion.div>
 
         <motion.div
-          className="mt-10"
+          className="mt-12"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.2, duration: 0.8 }}
         >
-          <div className="ornamental-line w-40 mx-auto mb-6" />
-          <p className="font-body text-lg md:text-xl tracking-[0.15em] text-muted-foreground">
+          <div className="ornamental-line w-40 mx-auto mb-8" />
+          <p className="font-body text-fluid-lg tracking-[0.15em] text-muted-foreground leading-relaxed">
             Request the honour of your presence
           </p>
-          <p className="font-body text-lg md:text-xl tracking-[0.15em] text-muted-foreground mt-2">
+          <p className="font-body text-fluid-lg tracking-[0.15em] text-muted-foreground mt-3 leading-relaxed">
             at the celebration of their marriage
           </p>
         </motion.div>
 
         <motion.div
-          className="mt-12"
+          className="mt-14"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.8, duration: 1 }}

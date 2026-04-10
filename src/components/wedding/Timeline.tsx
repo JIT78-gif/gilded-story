@@ -45,16 +45,16 @@ const TimelineEvent = ({ event, index }: { event: typeof events[0]; index: numbe
 
   return (
     <motion.div
-      className={`flex items-center w-full mb-16 md:mb-20 ${isLeft ? "md:flex-row" : "md:flex-row-reverse"} flex-col md:flex-row`}
+      className={`flex items-start w-full mb-20 md:mb-24 ${isLeft ? "md:flex-row" : "md:flex-row-reverse"} flex-col md:flex-row`}
       initial={{ opacity: 0, x: isLeft ? -40 : 40 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
     >
       {/* Content card with hanging animation */}
-      <div className={`w-full md:w-5/12 ${isLeft ? "md:text-right md:pr-10" : "md:text-left md:pl-10"} text-center md:text-inherit`}>
+      <div className={`w-full md:w-5/12 ${isLeft ? "md:text-right md:pr-12" : "md:text-left md:pl-12"} text-center md:text-inherit`}>
         <motion.div
-          className="relative"
+          className="relative pt-8"
           style={{ transformOrigin: "top center" }}
           initial={{ rotate: -2, opacity: 0 }}
           whileInView={{ rotate: 0, opacity: 1 }}
@@ -62,17 +62,15 @@ const TimelineEvent = ({ event, index }: { event: typeof events[0]; index: numbe
           transition={{ duration: 0.8, delay: index * 0.1 + 0.2, type: "spring", stiffness: 80, damping: 12 }}
         >
           {/* Hanging string */}
-          <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-px h-6 bg-primary/40" />
-          <div className="absolute -top-7 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full border border-primary/50 bg-card" />
+          <div className="absolute -top-0 left-1/2 -translate-x-1/2 w-px h-8 bg-primary/40" />
+          <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full border border-primary/50 bg-card" />
 
           <motion.div
-            className="bg-card border border-border rounded-xl p-6 md:p-8 shadow-sm"
+            className="bg-card border border-border rounded-xl p-7 md:p-9 shadow-sm"
             whileHover={{ y: -4, boxShadow: "0 10px 30px hsl(38 65% 50% / 0.1)" }}
-            transition={{ duration: 0.3 }}
             animate={{
               rotate: [0, 1.5, 0, -1.5, 0],
             }}
-            //@ts-ignore
             transition={{
               rotate: {
                 duration: 4,
@@ -82,25 +80,25 @@ const TimelineEvent = ({ event, index }: { event: typeof events[0]; index: numbe
               },
             }}
           >
-            <p className="font-body text-sm tracking-[0.2em] uppercase text-primary mb-2">
+            <p className="font-body text-fluid-sm tracking-[0.2em] uppercase text-primary mb-3">
               {event.time}
             </p>
-            <h3 className="font-heading text-xl md:text-2xl text-foreground mb-3">
+            <h3 className="font-heading text-fluid-xl text-foreground mb-4 leading-[1.3]">
               {event.title}
             </h3>
-            <p className="font-body text-base text-muted-foreground leading-relaxed">
+            <p className="font-body text-fluid-base text-muted-foreground leading-[1.8]">
               {event.description}
             </p>
 
             {/* Photo placeholder */}
-            <div className="mt-5 w-full h-32 rounded-lg bg-cream-dark flex items-center justify-center">
+            <div className="mt-6 w-full rounded-lg bg-cream-dark flex items-center justify-center py-8">
               <div className="text-center">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="hsl(38 65% 50% / 0.3)" strokeWidth="1" className="mx-auto">
                   <rect x="3" y="3" width="18" height="18" rx="2" />
                   <circle cx="8.5" cy="8.5" r="1.5" />
                   <path d="M21 15l-5-5L5 21" />
                 </svg>
-                <p className="font-body text-[10px] text-muted-foreground mt-1">Event photo</p>
+                <p className="font-body text-xs text-muted-foreground mt-2">Event photo</p>
               </div>
             </div>
           </motion.div>
@@ -135,17 +133,17 @@ const Timeline = () => {
   const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <section className="py-24 md:py-32 px-6" ref={containerRef}>
+    <section className="py-28 md:py-36 px-6" ref={containerRef}>
       <motion.div
-        className="text-center mb-20"
+        className="text-center mb-24"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        <p className="font-body text-lg tracking-[0.2em] uppercase text-muted-foreground mb-4">
+        <p className="font-body text-fluid-lg tracking-[0.2em] uppercase text-muted-foreground mb-5 leading-relaxed">
           The Celebrations
         </p>
-        <h2 className="font-heading text-3xl md:text-5xl text-foreground">
+        <h2 className="font-heading text-fluid-4xl text-foreground leading-[1.3]">
           Schedule of Events
         </h2>
       </motion.div>
