@@ -20,7 +20,7 @@ const RSVPSection = () => {
   const [submitted, setSubmitted] = useState(false);
 
   const validate = (): boolean => {
-    const errs: Partial<FormData> = {};
+    const errs: Partial<Record<keyof FormData, string>> = {};
     if (!form.name.trim()) errs.name = "Name is required";
     if (!form.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email))
       errs.email = "Valid email is required";
