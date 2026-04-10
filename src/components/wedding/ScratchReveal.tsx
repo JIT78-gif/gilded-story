@@ -129,26 +129,26 @@ const ScratchReveal = () => {
   }, [revealed]);
 
   return (
-    <section ref={sectionRef} className="relative min-h-[60vh] flex flex-col items-center justify-center px-6 py-24 md:py-32">
+    <section ref={sectionRef} className="relative flex flex-col items-center justify-center px-6 py-28 md:py-36" style={{ minHeight: "auto" }}>
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-center"
+        className="text-center w-full max-w-xl mx-auto"
       >
         <AnimatePresence mode="wait">
           {!revealed ? (
             <motion.div key="scratch" className="flex flex-col items-center">
-              <p className="font-body text-lg text-muted-foreground mb-6 tracking-wider">
+              <p className="font-body text-fluid-lg text-muted-foreground mb-8 tracking-wider leading-relaxed">
                 Discover when the magic happens
               </p>
-              <div className="relative w-[300px] h-[150px] md:w-[400px] md:h-[180px] rounded-xl overflow-hidden gold-glow">
+              <div className="relative w-[300px] h-[160px] md:w-[420px] md:h-[200px] rounded-xl overflow-hidden gold-glow">
                 {/* Revealed content underneath */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center bg-card">
-                  <p className="font-heading text-2xl md:text-3xl text-foreground">
+                <div className="absolute inset-0 flex flex-col items-center justify-center bg-card p-4">
+                  <p className="font-heading text-fluid-2xl text-foreground leading-relaxed">
                     December 15, 2026
                   </p>
-                  <p className="font-body text-muted-foreground mt-1">Sunday • Winter</p>
+                  <p className="font-body text-fluid-base text-muted-foreground mt-2">Sunday • Winter</p>
                 </div>
                 <canvas
                   ref={canvasRef}
@@ -172,7 +172,7 @@ const ScratchReveal = () => {
               </div>
               {scratching && (
                 <motion.p
-                  className="text-sm text-muted-foreground mt-3 opacity-60"
+                  className="text-fluid-sm text-muted-foreground mt-4 opacity-60"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 0.6 }}
                 >
@@ -186,20 +186,20 @@ const ScratchReveal = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, type: "spring" }}
-              className="flex flex-col items-center"
+              className="flex flex-col items-center py-4"
             >
               <motion.p
-                className="font-script text-4xl md:text-5xl text-gold-gradient mb-4"
+                className="font-script text-fluid-4xl text-gold-gradient mb-6 leading-[1.5] pb-2"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
               >
                 We're Getting Married
               </motion.p>
-              <p className="font-heading text-3xl md:text-4xl text-foreground">
+              <p className="font-heading text-fluid-3xl text-foreground leading-relaxed">
                 December 15, 2026
               </p>
-              <p className="font-body text-lg text-muted-foreground mt-2">
+              <p className="font-body text-fluid-lg text-muted-foreground mt-3 leading-relaxed">
                 Sunday • A Winter Celebration
               </p>
             </motion.div>

@@ -34,8 +34,6 @@ const RSVPSection = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
-
-    // Placeholder function - replace with actual API call
     console.log("RSVP Submitted:", form);
     setSubmitted(true);
     toast.success("Thank you for your response!", {
@@ -46,19 +44,19 @@ const RSVPSection = () => {
   };
 
   const inputClasses =
-    "w-full bg-transparent border-b border-border focus:border-primary outline-none py-3 px-1 font-body text-lg text-foreground placeholder:text-muted-foreground transition-colors";
+    "w-full bg-transparent border-b border-border focus:border-primary outline-none py-4 px-1 font-body text-fluid-lg text-foreground placeholder:text-muted-foreground transition-colors leading-relaxed";
 
   if (submitted) {
     return (
-      <section className="py-24 md:py-32 px-6">
+      <section className="py-28 md:py-36 px-6">
         <motion.div
-          className="max-w-md mx-auto text-center"
+          className="max-w-lg mx-auto text-center"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ type: "spring" }}
         >
           <motion.div
-            className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6"
+            className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-8"
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ delay: 0.2, type: "spring" }}
@@ -67,8 +65,8 @@ const RSVPSection = () => {
               <path d="M20 6L9 17l-5-5" />
             </svg>
           </motion.div>
-          <h3 className="font-heading text-2xl text-foreground mb-2">Response Received</h3>
-          <p className="font-body text-lg text-muted-foreground">
+          <h3 className="font-heading text-fluid-2xl text-foreground mb-4 leading-[1.3]">Response Received</h3>
+          <p className="font-body text-fluid-lg text-muted-foreground leading-[1.8]">
             {form.attendance === "accept"
               ? "We're thrilled you'll be joining us for this beautiful celebration."
               : "Thank you for letting us know. You'll be in our hearts."}
@@ -79,24 +77,24 @@ const RSVPSection = () => {
   }
 
   return (
-    <section className="py-24 md:py-32 px-6">
+    <section className="py-28 md:py-36 px-6">
       <motion.div
-        className="max-w-md mx-auto"
+        className="max-w-lg mx-auto"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
       >
-        <div className="text-center mb-12">
-          <p className="font-body text-lg tracking-[0.2em] uppercase text-muted-foreground mb-3">
+        <div className="text-center mb-14">
+          <p className="font-body text-fluid-lg tracking-[0.2em] uppercase text-muted-foreground mb-4 leading-relaxed">
             Will you join us?
           </p>
-          <h2 className="font-heading text-3xl md:text-4xl text-foreground">
+          <h2 className="font-heading text-fluid-3xl text-foreground leading-[1.3]">
             Kindly Respond
           </h2>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-8">
+        <form onSubmit={handleSubmit} className="space-y-10">
           <div>
             <input
               type="text"
@@ -106,7 +104,7 @@ const RSVPSection = () => {
               className={inputClasses}
               maxLength={100}
             />
-            {errors.name && <p className="text-destructive text-sm mt-1 font-body">{errors.name}</p>}
+            {errors.name && <p className="text-destructive text-fluid-sm mt-2 font-body">{errors.name}</p>}
           </div>
 
           <div>
@@ -118,7 +116,7 @@ const RSVPSection = () => {
               className={inputClasses}
               maxLength={255}
             />
-            {errors.email && <p className="text-destructive text-sm mt-1 font-body">{errors.email}</p>}
+            {errors.email && <p className="text-destructive text-fluid-sm mt-2 font-body">{errors.email}</p>}
           </div>
 
           <div>
@@ -130,18 +128,18 @@ const RSVPSection = () => {
               className={inputClasses}
               maxLength={15}
             />
-            {errors.phone && <p className="text-destructive text-sm mt-1 font-body">{errors.phone}</p>}
+            {errors.phone && <p className="text-destructive text-fluid-sm mt-2 font-body">{errors.phone}</p>}
           </div>
 
           <div>
-            <p className="font-body text-muted-foreground mb-4">Will you be attending?</p>
-            <div className="flex gap-4">
+            <p className="font-body text-fluid-base text-muted-foreground mb-5 leading-relaxed">Will you be attending?</p>
+            <div className="flex gap-5">
               {(["accept", "decline"] as const).map((opt) => (
                 <motion.button
                   key={opt}
                   type="button"
                   onClick={() => setForm({ ...form, attendance: opt })}
-                  className={`flex-1 py-3 rounded-lg border font-body text-lg transition-all ${
+                  className={`flex-1 py-4 rounded-lg border font-body text-fluid-lg transition-all leading-relaxed ${
                     form.attendance === opt
                       ? "border-primary bg-primary/10 text-foreground"
                       : "border-border text-muted-foreground hover:border-primary/50"
@@ -153,12 +151,12 @@ const RSVPSection = () => {
                 </motion.button>
               ))}
             </div>
-            {errors.attendance && <p className="text-destructive text-sm mt-1 font-body">{errors.attendance}</p>}
+            {errors.attendance && <p className="text-destructive text-fluid-sm mt-2 font-body">{errors.attendance}</p>}
           </div>
 
           <motion.button
             type="submit"
-            className="w-full py-4 bg-gold-gradient rounded-lg font-heading text-lg text-primary-foreground tracking-wider"
+            className="w-full py-5 bg-gold-gradient rounded-lg font-heading text-fluid-lg text-primary-foreground tracking-wider"
             whileHover={{ scale: 1.02, boxShadow: "0 8px 25px hsl(38 65% 50% / 0.3)" }}
             whileTap={{ scale: 0.98 }}
           >

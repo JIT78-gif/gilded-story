@@ -13,19 +13,19 @@ const AddToCalendar = () => {
   };
 
   return (
-    <section className="py-12 px-6">
+    <section className="py-16 md:py-20 px-6">
       <motion.div
-        className="text-center"
+        className="max-w-lg mx-auto text-center"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        <p className="font-body text-muted-foreground mb-4 text-lg">
+        <p className="font-body text-fluid-lg text-muted-foreground mb-6 leading-relaxed">
           Don't forget to save the date
         </p>
         <motion.button
           onClick={handleAdd}
-          className="inline-flex items-center gap-3 px-8 py-4 border border-primary rounded-lg font-body text-lg text-foreground hover:bg-primary/5 transition-colors"
+          className="inline-flex items-center gap-3 px-10 py-5 border border-primary rounded-lg font-body text-fluid-lg text-foreground hover:bg-primary/5 transition-colors leading-relaxed"
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.98 }}
         >
