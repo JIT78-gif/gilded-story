@@ -17,7 +17,7 @@ const contacts = [
 
 const ContactSection = () => {
   return (
-    <footer className="py-16 px-6 border-t border-border">
+    <footer className="py-20 md:py-24 px-6 border-t border-border">
       <motion.div
         className="max-w-2xl mx-auto"
         initial={{ opacity: 0, y: 20 }}

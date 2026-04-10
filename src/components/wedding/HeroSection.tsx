@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-6">
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-6 py-16">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-[0.03]"
         style={{
@@ -30,13 +30,13 @@ const HeroSection = () => {
       ))}
 
       <motion.div
-        className="text-center relative z-10"
+        className="text-center relative z-10 max-w-3xl mx-auto"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5 }}
       >
         <motion.p
-          className="font-body text-lg md:text-xl tracking-[0.3em] uppercase text-muted-foreground mb-6"
+          className="font-body text-lg md:text-xl tracking-[0.3em] uppercase text-muted-foreground mb-8"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.8 }}
@@ -48,25 +48,26 @@ const HeroSection = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.6, duration: 1 }}
+          className="py-4"
         >
-          <h1 className="font-script text-5xl md:text-7xl lg:text-8xl text-gold-gradient leading-relaxed pb-2">
+          <h1 className="font-script text-5xl md:text-7xl lg:text-8xl text-gold-gradient leading-[1.4] pb-3 px-4">
             Priya
           </h1>
           <motion.p
-            className="font-body text-2xl md:text-3xl text-muted-foreground my-3"
+            className="font-body text-2xl md:text-3xl text-muted-foreground my-4"
             initial={{ opacity: 0, scaleX: 0 }}
             animate={{ opacity: 1, scaleX: 1 }}
             transition={{ delay: 1, duration: 0.6 }}
           >
             &amp;
           </motion.p>
-          <h1 className="font-script text-5xl md:text-7xl lg:text-8xl text-gold-gradient leading-relaxed pb-2">
+          <h1 className="font-script text-5xl md:text-7xl lg:text-8xl text-gold-gradient leading-[1.4] pb-3 px-4">
             Arjun
           </h1>
         </motion.div>
 
         <motion.div
-          className="mt-8"
+          className="mt-10"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.2, duration: 0.8 }}
@@ -75,13 +76,13 @@ const HeroSection = () => {
           <p className="font-body text-lg md:text-xl tracking-[0.15em] text-muted-foreground">
             Request the honour of your presence
           </p>
-          <p className="font-body text-lg md:text-xl tracking-[0.15em] text-muted-foreground mt-1">
+          <p className="font-body text-lg md:text-xl tracking-[0.15em] text-muted-foreground mt-2">
             at the celebration of their marriage
           </p>
         </motion.div>
 
         <motion.div
-          className="mt-10"
+          className="mt-12"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.8, duration: 1 }}

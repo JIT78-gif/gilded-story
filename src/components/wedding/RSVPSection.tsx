@@ -50,7 +50,7 @@ const RSVPSection = () => {
 
   if (submitted) {
     return (
-      <section className="py-20 px-6">
+      <section className="py-24 md:py-32 px-6">
         <motion.div
           className="max-w-md mx-auto text-center"
           initial={{ opacity: 0, scale: 0.9 }}
@@ -79,7 +79,7 @@ const RSVPSection = () => {
   }
 
   return (
-    <section className="py-20 px-6">
+    <section className="py-24 md:py-32 px-6">
       <motion.div
         className="max-w-md mx-auto"
         initial={{ opacity: 0, y: 30 }}
