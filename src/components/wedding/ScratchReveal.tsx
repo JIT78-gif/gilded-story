@@ -103,17 +103,33 @@ const ScratchReveal = () => {
     checkReveal();
   };
 
+  // Only lock scroll when scratch section is in view and not yet revealed
+  const sectionRef = useRef<HTMLElement>(null);
+
   useEffect(() => {
-    if (!revealed) {
-      document.body.style.overflow = "hidden";
+    if (revealed) {
+      document.body.style.overflow = "";
+      return;
     }
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !revealed) {
+          document.body.style.overflow = "hidden";
+        } else {
+          document.body.style.overflow = "";
+        }
+      },
+      { threshold: 0.5 }
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
     return () => {
+      observer.disconnect();
       document.body.style.overflow = "";
     };
   }, [revealed]);
 
   return (
-    <section className="relative min-h-[60vh] flex flex-col items-center justify-center px-6 py-20">
+    <section ref={sectionRef} className="relative min-h-[60vh] flex flex-col items-center justify-center px-6 py-20">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}

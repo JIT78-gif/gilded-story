@@ -49,7 +49,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.6, duration: 1 }}
         >
-          <h1 className="font-script text-5xl md:text-7xl lg:text-8xl text-gold-gradient leading-tight">
+          <h1 className="font-script text-5xl md:text-7xl lg:text-8xl text-gold-gradient leading-relaxed pb-2">
             Priya
           </h1>
           <motion.p
@@ -60,7 +60,7 @@ const HeroSection = () => {
           >
             &amp;
           </motion.p>
-          <h1 className="font-script text-5xl md:text-7xl lg:text-8xl text-gold-gradient leading-tight">
+          <h1 className="font-script text-5xl md:text-7xl lg:text-8xl text-gold-gradient leading-relaxed pb-2">
             Arjun
           </h1>
         </motion.div>
