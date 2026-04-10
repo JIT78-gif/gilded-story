@@ -129,7 +129,7 @@ const ScratchReveal = () => {
   }, [revealed]);
 
   return (
-    <section ref={sectionRef} className="relative min-h-[60vh] flex flex-col items-center justify-center px-6 py-20">
+    <section ref={sectionRef} className="relative min-h-[60vh] flex flex-col items-center justify-center px-6 py-24 md:py-32">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}

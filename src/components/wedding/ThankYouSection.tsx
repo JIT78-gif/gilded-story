@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const ThankYouSection = () => {
   return (
-    <section className="py-24 px-6 relative overflow-hidden">
+    <section className="py-24 md:py-32 px-6 relative overflow-hidden">
       {/* Floral garland divider at top */}
       <div className="absolute top-0 left-0 right-0 flex justify-center">
         <svg viewBox="0 0 400 40" className="w-80 h-10 opacity-30">

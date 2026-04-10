@@ -32,7 +32,7 @@ const CountdownTimer = () => {
   }, []);
 
   return (
-    <section className="py-20 px-6">
+    <section className="py-24 md:py-32 px-6">
       <motion.div
         className="text-center"
         initial={{ opacity: 0, y: 30 }}
