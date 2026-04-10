@@ -103,11 +103,27 @@ const ScratchReveal = () => {
     checkReveal();
   };
 
+  // Only lock scroll when scratch section is in view and not yet revealed
+  const sectionRef = useRef<HTMLElement>(null);
+
   useEffect(() => {
-    if (!revealed) {
-      document.body.style.overflow = "hidden";
+    if (revealed) {
+      document.body.style.overflow = "";
+      return;
     }
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !revealed) {
+          document.body.style.overflow = "hidden";
+        } else {
+          document.body.style.overflow = "";
+        }
+      },
+      { threshold: 0.5 }
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
     return () => {
+      observer.disconnect();
       document.body.style.overflow = "";
     };
   }, [revealed]);
