@@ -16,7 +16,7 @@ const RSVPSection = () => {
     phone: "",
     attendance: "",
   });
-  const [errors, setErrors] = useState<Partial<FormData>>({});
+  const [errors, setErrors] = useState<Partial<Record<keyof FormData, string>>>({});
   const [submitted, setSubmitted] = useState(false);
 
   const validate = (): boolean => {
