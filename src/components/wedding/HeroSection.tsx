@@ -60,7 +60,7 @@ const HeroSection = () => {
           >
             &amp;
           </motion.p>
-          <h1 className="font-script text-5xl md:text-7xl lg:text-8xl text-gold-gradient leading-tight">
+          <h1 className="font-script text-5xl md:text-7xl lg:text-8xl text-gold-gradient leading-relaxed pb-2">
             Arjun
           </h1>
         </motion.div>
