@@ -19,28 +19,29 @@ const Index = () => {
       <MusicToggle />
 
       <HeroSection />
-      <OrnamentalDivider variant="floral" />
+      <OrnamentalDivider variant="torn-top" />
 
       <ScratchReveal />
-      <OrnamentalDivider variant="zigzag" />
-
-      <CountdownTimer />
-      <OrnamentalDivider variant="mandala" />
-
-      <CoupleGallery />
-      <OrnamentalDivider variant="wave" />
-
-      <VenueSection />
       <OrnamentalDivider variant="floral" />
 
+      <CountdownTimer />
+      <OrnamentalDivider variant="torn-top" />
+
+      <CoupleGallery />
+      <OrnamentalDivider variant="torn-bottom" />
+
+      <VenueSection />
+      <OrnamentalDivider variant="garland" />
+
       <Timeline />
-      <OrnamentalDivider variant="zigzag" />
+      <OrnamentalDivider variant="torn-top" />
 
       <RSVPSection />
       <AddToCalendar />
-      <OrnamentalDivider variant="mandala" />
+      <OrnamentalDivider variant="garland" />
 
       <ThankYouSection />
+      <OrnamentalDivider variant="floral" />
       <ContactSection />
     </div>
   );
