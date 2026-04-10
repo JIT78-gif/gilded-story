@@ -14,35 +14,132 @@ import MusicToggle from "@/components/wedding/MusicToggle";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background overflow-x-hidden">
+    <div className="min-h-screen overflow-x-hidden">
       <FloatingPetals />
       <MusicToggle />
 
-      <HeroSection />
-      <OrnamentalDivider variant="torn-top" />
+      {/* Hero — cream background */}
+      <div className="bg-background">
+        <HeroSection />
+      </div>
 
-      <ScratchReveal />
-      <OrnamentalDivider variant="floral" />
+      {/* Torn edge: cream → card */}
+      <OrnamentalDivider
+        variant="torn-paper"
+        fromColor="hsl(var(--background))"
+        toColor="hsl(var(--card))"
+      />
 
-      <CountdownTimer />
-      <OrnamentalDivider variant="torn-top" />
+      {/* Scratch Reveal — card background */}
+      <div className="bg-card">
+        <ScratchReveal />
+      </div>
 
-      <CoupleGallery />
-      <OrnamentalDivider variant="torn-bottom" />
+      {/* Flourish divider */}
+      <div className="bg-card">
+        <OrnamentalDivider variant="flourish" />
+      </div>
 
-      <VenueSection />
-      <OrnamentalDivider variant="garland" />
+      {/* Wave: card → background */}
+      <OrnamentalDivider
+        variant="wave-organic"
+        fromColor="hsl(var(--card))"
+        toColor="hsl(var(--background))"
+      />
 
-      <Timeline />
-      <OrnamentalDivider variant="torn-top" />
+      {/* Countdown — cream background */}
+      <div className="bg-background">
+        <CountdownTimer />
+      </div>
 
-      <RSVPSection />
-      <AddToCalendar />
-      <OrnamentalDivider variant="garland" />
+      {/* Torn paper: cream → card */}
+      <OrnamentalDivider
+        variant="torn-paper-reverse"
+        fromColor="hsl(var(--background))"
+        toColor="hsl(var(--card))"
+      />
 
-      <ThankYouSection />
-      <OrnamentalDivider variant="floral" />
-      <ContactSection />
+      {/* Gallery — card background */}
+      <div className="bg-card">
+        <CoupleGallery />
+      </div>
+
+      {/* Torn paper: card → cream */}
+      <OrnamentalDivider
+        variant="torn-paper"
+        fromColor="hsl(var(--card))"
+        toColor="hsl(var(--background))"
+      />
+
+      {/* Venue — cream background */}
+      <div className="bg-background">
+        <VenueSection />
+      </div>
+
+      {/* Mandala divider */}
+      <div className="bg-background">
+        <OrnamentalDivider variant="mandala" />
+      </div>
+
+      {/* Wave: cream → card */}
+      <OrnamentalDivider
+        variant="wave-organic"
+        fromColor="hsl(var(--background))"
+        toColor="hsl(var(--card))"
+      />
+
+      {/* Timeline — card background */}
+      <div className="bg-card">
+        <Timeline />
+      </div>
+
+      {/* Torn paper: card → cream */}
+      <OrnamentalDivider
+        variant="torn-paper-reverse"
+        fromColor="hsl(var(--card))"
+        toColor="hsl(var(--background))"
+      />
+
+      {/* RSVP — cream background */}
+      <div className="bg-background">
+        <RSVPSection />
+        <OrnamentalDivider variant="floral-border" />
+        <AddToCalendar />
+      </div>
+
+      {/* Vine garland transition */}
+      <div className="bg-background">
+        <OrnamentalDivider variant="vine-garland" />
+      </div>
+
+      {/* Wave: cream → card */}
+      <OrnamentalDivider
+        variant="wave-organic"
+        fromColor="hsl(var(--background))"
+        toColor="hsl(var(--card))"
+      />
+
+      {/* Thank You — card background */}
+      <div className="bg-card">
+        <ThankYouSection />
+      </div>
+
+      {/* Footer garland */}
+      <div className="bg-card">
+        <OrnamentalDivider variant="footer-garland" />
+      </div>
+
+      {/* Torn paper: card → cream */}
+      <OrnamentalDivider
+        variant="torn-paper"
+        fromColor="hsl(var(--card))"
+        toColor="hsl(var(--background))"
+      />
+
+      {/* Contact/Footer — cream background */}
+      <div className="bg-background">
+        <ContactSection />
+      </div>
     </div>
   );
 };
